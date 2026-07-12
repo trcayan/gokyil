@@ -1,0 +1,546 @@
+<!DOCTYPE html>
+
+<html lang="tr">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<meta content="Gök Yıl İnşaat - Yapı güçlendirme, proje yönetimi, deprem analizi, kentsel dönüşüm ve mühendislik danışmanlığı hizmetleri." name="description"/>
+<title>Hizmetler | Gök Yıl İnşaat Müşavirlik Yapı Mühendislik</title>
+<link href="style.css" rel="stylesheet"/>
+<style>
+        /* Hizmetler sayfasına özel stiller */
+        .services-detail {
+            background: var(--white);
+        }
+        .service-detail-grid {
+            display: flex;
+            flex-direction: column;
+            gap: 80px;
+        }
+        .service-detail-item {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+        }
+        .service-detail-item.reverse {
+            direction: rtl;
+        }
+        .service-detail-item.reverse > * {
+            direction: ltr;
+        }
+        .service-detail-img {
+            border-radius: var(--radius-lg);
+            overflow: hidden;
+            height: 360px;
+        }
+        .service-detail-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+        .service-detail-img:hover img {
+            transform: scale(1.04);
+        }
+        .service-detail-content .service-number {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 4rem;
+            font-weight: 800;
+            color: rgba(232,75,26,0.1);
+            line-height: 1;
+            margin-bottom: -10px;
+        }
+        .service-detail-content h2 {
+            font-size: 1.8rem;
+            color: var(--secondary);
+            margin-bottom: 16px;
+        }
+        .service-detail-content h2 span { color: var(--primary); }
+        .service-detail-content p {
+            color: var(--gray);
+            line-height: 1.8;
+            margin-bottom: 20px;
+        }
+        .service-features {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            margin-bottom: 24px;
+        }
+        .service-feature {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 0.9rem;
+            color: var(--gray-dark);
+        }
+        .service-feature::before {
+            content: '✓';
+            width: 22px;
+            height: 22px;
+            min-width: 22px;
+            background: var(--primary);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.7rem;
+            font-weight: 700;
+        }
+        .process-section {
+            background: var(--gray-bg);
+        }
+        .process-steps {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 30px;
+            position: relative;
+        }
+        .process-steps::before {
+            content: '';
+            position: absolute;
+            top: 36px;
+            left: 10%;
+            right: 10%;
+            height: 2px;
+            background: linear-gradient(90deg, var(--primary), var(--primary-light));
+            z-index: 0;
+        }
+        .process-step {
+            text-align: center;
+            position: relative;
+            z-index: 1;
+        }
+        .step-number {
+            width: 72px;
+            height: 72px;
+            background: var(--white);
+            border: 3px solid var(--primary);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: 'Montserrat', sans-serif;
+            font-size: 1.4rem;
+            font-weight: 800;
+            color: var(--primary);
+            margin: 0 auto 20px;
+            transition: var(--transition);
+        }
+        .process-step:hover .step-number {
+            background: var(--primary);
+            color: var(--white);
+            transform: scale(1.1);
+        }
+        .process-step h4 {
+            font-size: 0.95rem;
+            color: var(--secondary);
+            margin-bottom: 8px;
+        }
+        .process-step p {
+            font-size: 0.82rem;
+            color: var(--gray);
+            line-height: 1.6;
+        }
+        .licenses-section {
+            background: var(--white);
+        }
+        .licenses-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 24px;
+        }
+        .license-card {
+            background: var(--gray-bg);
+            border-radius: var(--radius-lg);
+            padding: 30px;
+            text-align: center;
+            border: 1px solid var(--border);
+            transition: var(--transition);
+        }
+        .license-card:hover {
+            border-color: var(--primary);
+            box-shadow: var(--shadow-hover);
+            transform: translateY(-4px);
+        }
+        .license-icon {
+            font-size: 2.5rem;
+            margin-bottom: 16px;
+        }
+        .license-card h4 {
+            font-size: 1rem;
+            color: var(--secondary);
+            margin-bottom: 8px;
+        }
+        .license-card p {
+            font-size: 0.82rem;
+            color: var(--gray);
+            line-height: 1.6;
+        }
+        @media (max-width: 768px) {
+            .service-detail-item { grid-template-columns: 1fr; gap: 30px; }
+            .service-detail-item.reverse { direction: ltr; }
+            .service-detail-img { height: 240px; }
+            .process-steps { grid-template-columns: repeat(2, 1fr); }
+            .process-steps::before { display: none; }
+            .licenses-grid { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+<!-- HEADER -->
+<header>
+<nav class="navbar">
+<a class="logo" href="index.html">
+<svg class="logo-svg" viewbox="0 0 120 120" xmlns="http://www.w3.org/2000/svg">
+<line stroke="#999" stroke-width="1.2" x1="60" x2="60" y1="10" y2="105"></line>
+<line stroke="#E84B1A" stroke-width="2.5" x1="20" x2="100" y1="105" y2="105"></line>
+<path d="M60,10 Q35,30 25,55 Q20,70 22,85 Q35,95 60,100 Q85,95 98,85 Q100,70 95,55 Q85,30 60,10" fill="none" stroke="#bbb" stroke-width="1"></path>
+<path d="M60,10 Q42,28 36,50 Q32,65 34,80 Q44,92 60,97 Q76,92 86,80 Q88,65 84,50 Q78,28 60,10" fill="none" stroke="#bbb" stroke-width="1"></path>
+<path d="M60,10 Q50,26 47,45 Q44,60 46,75 Q52,88 60,93 Q68,88 74,75 Q76,60 73,45 Q70,26 60,10" fill="none" stroke="#bbb" stroke-width="1"></path>
+<path d="M28,60 Q44,55 60,54 Q76,55 92,60" fill="none" stroke="#ccc" stroke-width="0.8"></path>
+<path d="M24,75 Q42,70 60,69 Q78,70 96,75" fill="none" stroke="#ccc" stroke-width="0.8"></path>
+<path d="M32,45 Q46,41 60,40 Q74,41 88,45" fill="none" stroke="#ccc" stroke-width="0.8"></path>
+<path d="M60,10 Q30,35 22,70 Q20,85 25,100" fill="none" stroke="#E84B1A" stroke-linecap="round" stroke-width="2.8"></path>
+</svg>
+<div class="logo-text">
+<span class="brand">GÖK YIL YAPI</span>
+<span class="tagline">İnşaat Müşavirlik Yapı Mühendislik Ltd. Şti.</span>
+</div>
+</a>
+<div class="nav-links">
+<a href="index.html">Ana Sayfa</a>
+<a href="hakkimizda.html">Hakkımızda</a>
+<a class="active" href="hizmetler.html">Hizmetler</a>
+<a href="iletisim.html">İletişim</a>
+<a class="nav-cta" href="tel:05323746945">📞 0532 374 69 45</a>
+</div>
+<div class="hamburger" onclick="toggleMenu()">
+<span></span><span></span><span></span>
+</div>
+</nav>
+<div class="mobile-menu" id="mobileMenu">
+<a href="index.html">Ana Sayfa</a>
+<a href="hakkimizda.html">Hakkımızda</a>
+<a href="hizmetler.html">Hizmetler</a>
+<a href="iletisim.html">İletişim</a>
+<a href="tel:05323746945">📞 0532 374 69 45</a>
+</div>
+</header>
+<!-- PAGE HERO -->
+<section class="page-hero">
+<div class="page-hero-content">
+<div class="container">
+<span class="section-tag">Ne Yapıyoruz?</span>
+<h1>Mühendislik <span>Hizmetlerimiz</span></h1>
+<p>İnşaat ve yapı mühendisliğinin tüm alanlarında uzman kadromuzla kapsamlı çözümler sunuyoruz.</p>
+<div class="breadcrumb">
+<a href="index.html">Ana Sayfa</a>
+<span>/</span>
+<span>Hizmetler</span>
+</div>
+</div>
+</div>
+</section>
+<!-- HİZMET DETAYLARI -->
+<section class="services-detail">
+<div class="container">
+<div class="service-detail-grid">
+<!-- 1. Yapı Güçlendirme -->
+<div class="service-detail-item">
+<div class="service-detail-img">
+<img alt="Yapı Güçlendirme" src="https://engineeringdiscoveries.com/wp-content/uploads/2024/11/Reinforced-Concrete-Structural-Elements-scaled.jpg"/>
+</div>
+<div class="service-detail-content">
+<div class="service-number">01</div>
+<span class="section-tag">Güçlendirme</span>
+<h2>Yapı <span>Güçlendirme</span></h2>
+<p>Mevcut binaların taşıyıcı sistem performansını artırarak depreme karşı güvenliğini sağlıyoruz. Betonarme, çelik ve FRP güçlendirme yöntemleriyle yapılarınızı geleceğe taşıyoruz.</p>
+<div class="service-features">
+<div class="service-feature">Betonarme Güçlendirme</div>
+<div class="service-feature">Çelik Güçlendirme</div>
+<div class="service-feature">FRP / Karbon Elyaf Uygulaması</div>
+<div class="service-feature">Epoksi Enjeksiyon</div>
+<div class="service-feature">Çelik Halat Gergi Uygulaması</div>
+</div>
+<a class="btn-primary" href="iletisim.html">Teklif Al →</a>
+</div>
+</div>
+<!-- 2. Proje Yönetimi -->
+<div class="service-detail-item reverse">
+<div class="service-detail-img">
+<img alt="Proje Yönetimi" src="https://www.michelli.com/wp-content/uploads/2023/07/Two-engineers-walk-a-construction-site-scaled.jpg"/>
+</div>
+<div class="service-detail-content">
+<div class="service-number">02</div>
+<span class="section-tag">Proje</span>
+<h2>Proje <span>Yönetimi</span></h2>
+<p>Mimari, statik ve tesisat projelerinin hazırlanmasından onay süreçlerine, uygulamadan teslime kadar tüm aşamaları profesyonel ekibimizle yönetiyoruz.</p>
+<div class="service-features">
+<div class="service-feature">Mimari Proje Tasarımı</div>
+<div class="service-feature">Statik Proje Hazırlama</div>
+<div class="service-feature">Ruhsat &amp; İzin Süreçleri</div>
+<div class="service-feature">Uygulama Denetimi</div>
+<div class="service-feature">Teknik Rapor Hazırlama</div>
+</div>
+<a class="btn-primary" href="iletisim.html">Teklif Al →</a>
+</div>
+</div>
+<!-- 3. Deprem Performans Analizi -->
+<div class="service-detail-item">
+<div class="service-detail-img">
+<img alt="Deprem Performans Analizi" src="https://images.moneycontrol.com/static-mcnews/2023/02/4-Earthquake-resistant-buildings.jpg"/>
+</div>
+<div class="service-detail-content">
+<div class="service-number">03</div>
+<span class="section-tag">Deprem</span>
+<h2>Deprem Performans <span>Analizi</span></h2>
+<p>Yapılarınızın deprem güvenliğini bilimsel yöntemlerle değerlendiriyor, Türkiye Bina Deprem Yönetmeliği kapsamında risk tespiti ve güçlendirme önerileri sunuyoruz.</p>
+<div class="service-features">
+<div class="service-feature">Saha Keşfi &amp; Yapı İncelemesi</div>
+<div class="service-feature">Malzeme Dayanım Testleri</div>
+<div class="service-feature">Taşıyıcı Sistem Analizi</div>
+<div class="service-feature">Deprem Performans Raporu</div>
+<div class="service-feature">Güçlendirme Önerileri</div>
+</div>
+<a class="btn-primary" href="iletisim.html">Teklif Al →</a>
+</div>
+</div>
+<!-- 4. Kentsel Dönüşüm -->
+<div class="service-detail-item reverse">
+<div class="service-detail-img">
+<img alt="Kentsel Dönüşüm" src="https://www.sevenspikes.com.tr/wp-content/uploads/slider/cache/6b0003be7cee0df8b1ffb88ad2593cfe/modern-building-construction-scaled.jpg"/>
+</div>
+<div class="service-detail-content">
+<div class="service-number">04</div>
+<span class="section-tag">Dönüşüm</span>
+<h2>Kentsel <span>Dönüşüm</span></h2>
+<p>Riskli yapıların tespitinden yıkım ve yeniden inşa süreçlerine kadar kentsel dönüşüm projelerini mevzuata uygun şekilde uçtan uca yönetiyoruz.</p>
+<div class="service-features">
+<div class="service-feature">Riskli Yapı Tespiti</div>
+<div class="service-feature">Yıkım &amp; Yeniden İnşa</div>
+<div class="service-feature">Hak Sahipliği Danışmanlığı</div>
+<div class="service-feature">Belediye &amp; Bakanlık Süreçleri</div>
+<div class="service-feature">Kira Yardımı Danışmanlığı</div>
+</div>
+<a class="btn-primary" href="iletisim.html">Teklif Al →</a>
+</div>
+</div>
+<!-- 5. Laboratuvar & Denetim -->
+<div class="service-detail-item">
+<div class="service-detail-img">
+<img alt="Laboratuvar ve Denetim" src="https://structville.com/wp-content/uploads/2020/10/reinforced-concrete-structure.jpg"/>
+</div>
+<div class="service-detail-content">
+<div class="service-number">05</div>
+<span class="section-tag">Denetim</span>
+<h2>Laboratuvar &amp; <span>Denetim</span></h2>
+<p>Beton, zemin ve yapı malzemesi testleri ile yapı denetim hizmetleri sunarak projelerinizin kalite standartlarına uygunluğunu güvence altına alıyoruz.</p>
+<div class="service-features">
+<div class="service-feature">Beton Basınç Dayanım Testi</div>
+<div class="service-feature">Zemin Etüdü &amp; Analizi</div>
+<div class="service-feature">Karot Numune Alımı</div>
+<div class="service-feature">Yapı Denetim Hizmetleri</div>
+<div class="service-feature">Kalite Kontrol Raporları</div>
+</div>
+<a class="btn-primary" href="iletisim.html">Teklif Al →</a>
+</div>
+</div>
+<!-- 6. Mühendislik Danışmanlığı -->
+<div class="service-detail-item reverse">
+<div class="service-detail-img">
+<img alt="Mühendislik Danışmanlığı" src="https://scengineering.in/wp-content/uploads/2024/08/civil-engineer-supervise-roof-construction-workers-work-aerial-view-unrecognized-site-building-development-77779211.webp"/>
+</div>
+<div class="service-detail-content">
+<div class="service-number">06</div>
+<span class="section-tag">Danışmanlık</span>
+<h2>Mühendislik <span>Danışmanlığı</span></h2>
+<p>İnşaat projelerinizin her aşamasında teknik rapor hazırlama, fizibilite analizi ve uzman mühendislik danışmanlığı hizmetleri sunuyoruz.</p>
+<div class="service-features">
+<div class="service-feature">Teknik &amp; Statik Rapor</div>
+<div class="service-feature">Fizibilite Analizi</div>
+<div class="service-feature">İşyeri Ruhsatı Danışmanlığı</div>
+<div class="service-feature">Hasar Tespit Raporu</div>
+<div class="service-feature">Maliyet Analizi</div>
+</div>
+<a class="btn-primary" href="iletisim.html">Teklif Al →</a>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- ÇALIŞMA SÜRECİ -->
+<section class="process-section">
+<div class="container">
+<div class="section-header">
+<span class="section-tag">Nasıl Çalışıyoruz?</span>
+<h2>Çalışma <span>Sürecimiz</span></h2>
+<p>Her projede sistematik ve şeffaf bir süreç izliyoruz.</p>
+<div class="divider"></div>
+</div>
+<div class="process-steps">
+<div class="process-step">
+<div class="step-number">1</div>
+<h4>🔍 Keşif &amp; Analiz</h4>
+<p>Yapının mevcut durumu detaylı incelenir. Zayıf noktalar ve ihtiyaçlar tespit edilir.</p>
+</div>
+<div class="process-step">
+<div class="step-number">2</div>
+<h4>📐 Proje Tasarımı</h4>
+<p>Uzman mühendislerimiz tarafından yapıya özel proje hazırlanır ve onaylanır.</p>
+</div>
+<div class="process-step">
+<div class="step-number">3</div>
+<h4>🔩 Uygulama</h4>
+<p>Onaylı proje doğrultusunda titiz ve kontrollü uygulama gerçekleştirilir.</p>
+</div>
+<div class="process-step">
+<div class="step-number">4</div>
+<h4>✅ Teslim &amp; Rapor</h4>
+<p>Proje tamamlanır, kalite kontrol yapılır ve detaylı rapor müşteriye sunulur.</p>
+</div>
+</div>
+</div>
+</section>
+<!-- LİSANS & SERTİFİKALAR -->
+<section class="licenses-section">
+<div class="container">
+<div class="section-header">
+<span class="section-tag">Belgelerimiz</span>
+<h2>Lisans &amp; <span>Sertifikalar</span></h2>
+<p>Yasal güvence altında, sertifikalı kadromuzla hizmet veriyoruz.</p>
+<div class="divider"></div>
+</div>
+<div class="licenses-grid">
+<div class="license-card">
+<div class="license-icon">🏛️</div>
+<h4>Çevre ve Şehircilik Bakanlığı Lisansı</h4>
+<p>Bakanlık onaylı lisansımızla yasal çerçevede güçlendirme ve denetim hizmetleri sunuyoruz.</p>
+</div>
+<div class="license-card">
+<div class="license-icon">🔬</div>
+<h4>Yapı Denetim Yetki Belgesi</h4>
+<p>Yapı denetim alanında yetkili kuruluş olarak projelerinizi güvence altına alıyoruz.</p>
+</div>
+<div class="license-card">
+<div class="license-icon">📋</div>
+<h4>TMMOB Üyeliği</h4>
+<p>Türk Mühendis ve Mimar Odaları Birliği'ne kayıtlı uzman mühendis kadromuzla hizmetinizdeyiz.</p>
+</div>
+<div class="license-card">
+<div class="license-icon">🛡️</div>
+<h4>ISO Kalite Belgesi</h4>
+<p>Uluslararası kalite standartlarına uygun çalışma prensibimizle hizmet kalitemizi güvence altına alıyoruz.</p>
+</div>
+<div class="license-card">
+<div class="license-icon">⚠️</div>
+<h4>İş Güvenliği Sertifikası</h4>
+<p>İş sağlığı ve güvenliği alanında sertifikalı uzmanlarımızla güvenli çalışma ortamı sağlıyoruz.</p>
+</div>
+<div class="license-card">
+<div class="license-icon">🏗️</div>
+<h4>Müteahhitlik Yetki Belgesi</h4>
+<p>Büyük ölçekli inşaat projelerini üstlenme yetkisine sahip, deneyimli müteahhit firmayız.</p>
+</div>
+</div>
+</div>
+</section>
+<!-- CTA -->
+<section class="cta-section">
+<div class="container">
+<h2>Projeniz İçin Ücretsiz Teklif Alın</h2>
+<p>Uzman ekibimiz en kısa sürede sizinle iletişime geçecektir.</p>
+<a class="btn-white" href="iletisim.html">📞 Hemen İletişime Geçin</a>
+</div>
+</section>
+<!-- FOOTER -->
+<footer>
+<div class="container">
+<div class="footer-grid">
+<div class="footer-brand">
+<a class="logo" href="index.html">
+<svg class="logo-svg" style="width:45px;height:45px;" viewbox="0 0 120 120" xmlns="http://www.w3.org/2000/svg">
+<line stroke="#666" stroke-width="1.2" x1="60" x2="60" y1="10" y2="105"></line>
+<line stroke="#E84B1A" stroke-width="2.5" x1="20" x2="100" y1="105" y2="105"></line>
+<path d="M60,10 Q35,30 25,55 Q20,70 22,85 Q35,95 60,100 Q85,95 98,85 Q100,70 95,55 Q85,30 60,10" fill="none" stroke="#555" stroke-width="1"></path>
+<path d="M60,10 Q42,28 36,50 Q32,65 34,80 Q44,92 60,97 Q76,92 86,80 Q88,65 84,50 Q78,28 60,10" fill="none" stroke="#555" stroke-width="1"></path>
+<path d="M60,10 Q50,26 47,45 Q44,60 46,75 Q52,88 60,93 Q68,88 74,75 Q76,60 73,45 Q70,26 60,10" fill="none" stroke="#555" stroke-width="1"></path>
+<path d="M28,60 Q44,55 60,54 Q76,55 92,60" fill="none" stroke="#666" stroke-width="0.8"></path>
+<path d="M24,75 Q42,70 60,69 Q78,70 96,75" fill="none" stroke="#666" stroke-width="0.8"></path>
+<path d="M32,45 Q46,41 60,40 Q74,41 88,45" fill="none" stroke="#666" stroke-width="0.8"></path>
+<path d="M60,10 Q30,35 22,70 Q20,85 25,100" fill="none" stroke="#E84B1A" stroke-linecap="round" stroke-width="2.8"></path>
+</svg>
+<div class="logo-text">
+<span class="brand">GÖK YIL YAPI</span>
+<span class="tagline">İnşaat Müşavirlik Yapı Mühendislik</span>
+</div>
+</a>
+<p>Kars'ın güvenilir inşaat ve mühendislik firması olarak 30 yılı aşkın deneyimimizle hizmetinizdeyiz.</p>
+<div class="social-links">
+<a class="social-link" href="#">f</a>
+<a class="social-link" href="#">in</a>
+<a class="social-link" href="#">li</a>
+<a class="social-link" href="https://wa.me/905323746945">wa</a>
+</div>
+</div>
+<div class="footer-col">
+<h4>Hızlı Bağlantılar</h4>
+<ul>
+<li><a href="index.html">Ana Sayfa</a></li>
+<li><a href="hakkimizda.html">Hakkımızda</a></li>
+<li><a href="hizmetler.html">Hizmetler</a></li>
+<li><a href="iletisim.html">İletişim</a></li>
+</ul>
+</div>
+<div class="footer-col">
+<h4>Hizmetlerimiz</h4>
+<ul>
+<li><a href="hizmetler.html">Yapı Güçlendirme</a></li>
+<li><a href="hizmetler.html">Proje Yönetimi</a></li>
+<li><a href="hizmetler.html">Deprem Analizi</a></li>
+<li><a href="hizmetler.html">Kentsel Dönüşüm</a></li>
+<li><a href="hizmetler.html">Laboratuvar &amp; Denetim</a></li>
+<li><a href="hizmetler.html">Mühendislik Danışmanlığı</a></li>
+</ul>
+</div>
+<div class="footer-col">
+<h4>İletişim</h4>
+<div class="contact-item">
+<span class="icon">📍</span>
+<span class="text">Yenişehir Mah. No:4 (Taş Yapı 2)/12 Merkez, Kars / Türkiye</span>
+</div>
+<div class="contact-item">
+<span class="icon">📞</span>
+<span class="text"><a href="tel:05323746945">0532 374 69 45</a></span>
+</div>
+<div class="contact-item">
+<span class="icon">✉️</span>
+<span class="text"><a href="mailto:info@gokyil.com.tr">info@gokyil.com.tr</a></span>
+</div>
+<div class="contact-item">
+<span class="icon">🕐</span>
+<span class="text">Pzt – Cmt: 08:00 – 18:00</span>
+</div>
+</div>
+</div>
+<div class="footer-bottom">
+<p>© 2026 Gök Yıl İnşaat Müşavirlik Yapı Mühendislik Ltd. Şti. — Tüm hakları saklıdır.</p>
+<p>Vergi Dairesi: Kars | <a href="http://www.gokyil.com.tr">gokyil.com.tr</a></p>
+</div>
+</div>
+</footer>
+<button class="scroll-top" id="scrollTop" onclick="window.scrollTo({top:0,behavior:'smooth'})">↑</button>
+<script>
+    function toggleMenu() {
+        document.getElementById('mobileMenu').classList.toggle('open');
+    }
+    window.addEventListener('scroll', () => {
+        const btn = document.getElementById('scrollTop');
+        if (window.scrollY > 400) btn.classList.add('visible');
+        else btn.classList.remove('visible');
+    });
+</script>
+</body>
+</html>
