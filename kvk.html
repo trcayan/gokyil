@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+
+<html lang="tr">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<meta content="Gök Yıl İnşaat Müşavirlik Yapı Mühendislik Ltd. Şti. KVKK Aydınlatma Metni - Kişisel verilerin korunması hakkında bilgilendirme." name="description"/>
+<title>KVK Aydınlatma Metni | Gök Yıl İnşaat Müşavirlik Yapı Mühendislik</title>
+<link href="style.css" rel="stylesheet"/>
+<style>
+        .kvk-content {
+            background: var(--white);
+            max-width: 900px;
+            margin: 0 auto;
+        }
+        .kvk-content h2 {
+            font-size: 1.4rem;
+            color: var(--primary);
+            margin: 36px 0 14px;
+            padding-bottom: 8px;
+            border-bottom: 2px solid rgba(232,75,26,0.15);
+        }
+        .kvk-content h3 {
+            font-size: 1.1rem;
+            color: var(--secondary);
+            margin: 24px 0 10px;
+        }
+        .kvk-content p {
+            color: var(--gray);
+            line-height: 1.9;
+            margin-bottom: 14px;
+            font-size: 0.95rem;
+        }
+        .kvk-content ul {
+            list-style: disc;
+            padding-left: 24px;
+            margin-bottom: 16px;
+        }
+        .kvk-content ul li {
+            color: var(--gray);
+            line-height: 1.8;
+            font-size: 0.95rem;
+            margin-bottom: 6px;
+        }
+        .kvk-content table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 24px;
+            font-size: 0.9rem;
+        }
+        .kvk-content table th {
+            background: var(--primary);
+            color: var(--white);
+            padding: 12px 16px;
+            text-align: left;
+            font-family: 'Montserrat', sans-serif;
+        }
+        .kvk-content table td {
+            padding: 10px 16px;
+            border-bottom: 1px solid var(--border);
+            color: var(--gray);
+            vertical-align: top;
+        }
+        .kvk-content table tr:nth-child(even) td {
+            background: var(--gray-bg);
+        }
+        .kvk-info-box {
+            background: rgba(232,75,26,0.05);
+            border-left: 4px solid var(--primary);
+            border-radius: 0 var(--radius) var(--radius) 0;
+            padding: 20px 24px;
+            margin: 24px 0;
+        }
+        .kvk-info-box p {
+            margin: 0;
+            color: var(--gray-dark);
+        }
+        .kvk-update {
+            background: var(--gray-bg);
+            border-radius: var(--radius);
+            padding: 16px 20px;
+            font-size: 0.82rem;
+            color: var(--gray-light);
+            margin-top: 40px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+<!-- HEADER -->
+<header>
+<nav class="navbar">
+<a class="logo" href="index.html">
+<svg class="logo-svg" viewbox="0 0 120 120" xmlns="http://www.w3.org/2000/svg">
+<line stroke="#999" stroke-width="1.2" x1="60" x2="60" y1="10" y2="105"></line>
+<line stroke="#E84B1A" stroke-width="2.5" x1="20" x2="100" y1="105" y2="105"></line>
+<path d="M60,10 Q35,30 25,55 Q20,70 22,85 Q35,95 60,100 Q85,95 98,85 Q100,70 95,55 Q85,30 60,10" fill="none" stroke="#bbb" stroke-width="1"></path>
+<path d="M60,10 Q42,28 36,50 Q32,65 34,80 Q44,92 60,97 Q76,92 86,80 Q88,65 84,50 Q78,28 60,10" fill="none" stroke="#bbb" stroke-width="1"></path>
+<path d="M60,10 Q50,26 47,45 Q44,60 46,75 Q52,88 60,93 Q68,88 74,75 Q76,60 73,45 Q70,26 60,10" fill="none" stroke="#bbb" stroke-width="1"></path>
+<path d="M28,60 Q44,55 60,54 Q76,55 92,60" fill="none" stroke="#ccc" stroke-width="0.8"></path>
+<path d="M24,75 Q42,70 60,69 Q78,70 96,75" fill="none" stroke="#ccc" stroke-width="0.8"></path>
+<path d="M32,45 Q46,41 60,40 Q74,41 88,45" fill="none" stroke="#ccc" stroke-width="0.8"></path>
+<path d="M60,10 Q30,35 22,70 Q20,85 25,100" fill="none" stroke="#E84B1A" stroke-linecap="round" stroke-width="2.8"></path>
+</svg>
+<div class="logo-text">
+<span class="brand">GÖK YIL YAPI</span>
+<span class="tagline">İnşaat Müşavirlik Yapı Mühendislik Ltd. Şti.</span>
+</div>
+</a>
+<div class="nav-links">
+<a href="index.html">Ana Sayfa</a>
+<a href="hakkimizda.html">Hakkımızda</a>
+<a href="hizmetler.html">Hizmetler</a>
+<a href="blog.html">Blog</a>
+<a href="iletisim.html">İletişim</a>
+<a class="nav-cta" href="tel:05323746945">📞 0532 374 69 45</a>
+</div>
+<div class="hamburger" onclick="toggleMenu()"><span></span><span></span><span></span></div>
+</nav>
+<div class="mobile-menu" id="mobileMenu">
+<a href="index.html">Ana Sayfa</a>
+<a href="hakkimizda.html">Hakkımızda</a>
+<a href="hizmetler.html">Hizmetler</a>
+<a href="blog.html">Blog</a>
+<a href="iletisim.html">İletişim</a>
+<a href="tel:05323746945">📞 0532 374 69 45</a>
+</div>
+</header>
+<!-- PAGE HERO -->
+<section class="page-hero">
+<div class="page-hero-content">
+<div class="container">
+<span class="section-tag">Yasal Bilgilendirme</span>
+<h1>KVK <span>Aydınlatma Metni</span></h1>
+<p>6698 Sayılı Kişisel Verilerin Korunması Kanunu kapsamında hazırlanmıştır.</p>
+<div class="breadcrumb">
+<a href="index.html">Ana Sayfa</a>
+<span>/</span>
+<span>KVK Aydınlatma Metni</span>
+</div>
+</div>
+</div>
+</section>
+<section>
+<div class="container">
+<div class="kvk-content">
+<div class="kvk-info-box">
+<p><strong>Veri Sorumlusu:</strong> Gök Yıl İnşaat Müşavirlik Yapı Mühendislik Ltd. Şti.<br/>
+<strong>Adres:</strong> Yenişehir Mah. No:4 (Taş Yapı 2)/12 Merkez, Kars / Türkiye<br/>
+<strong>Telefon:</strong> 0532 374 69 45<br/>
+<strong>E-posta:</strong> info@gokyil.com.tr<br/>
+<strong>Web:</strong> www.gokyil.com.tr</p>
+</div>
+<h2>1. Amaç ve Kapsam</h2>
+<p>Gök Yıl İnşaat Müşavirlik Yapı Mühendislik Ltd. Şti. ("Şirket") olarak, 6698 Sayılı Kişisel Verilerin Korunması Kanunu ("KVKK") kapsamında veri sorumlusu sıfatıyla, kişisel verilerinizin işlenmesine ilişkin sizi bilgilendirmek amacıyla bu Aydınlatma Metni hazırlanmıştır.</p>
+<p>Bu metin; web sitemizi ziyaret eden kullanıcılar, iletişim formu dolduran kişiler, müşterilerimiz ve iş ortaklarımızın kişisel verilerinin nasıl toplandığını, işlendiğini ve korunduğunu açıklamaktadır.</p>
+<h2>2. Toplanan Kişisel Veriler</h2>
+<p>Şirketimiz tarafından aşağıdaki kişisel veriler toplanabilmektedir:</p>
+<table>
+<tr>
+<th>Veri Kategorisi</th>
+<th>Toplanan Veriler</th>
+<th>Toplama Yöntemi</th>
+</tr>
+<tr>
+<td><strong>Kimlik Bilgileri</strong></td>
+<td>Ad, soyad</td>
+<td>İletişim formu, sözleşme</td>
+</tr>
+<tr>
+<td><strong>İletişim Bilgileri</strong></td>
+<td>Telefon numarası, e-posta adresi</td>
+<td>İletişim formu, telefon görüşmesi</td>
+</tr>
+<tr>
+<td><strong>Proje Bilgileri</strong></td>
+<td>Proje türü, adres, talep detayları</td>
+<td>İletişim formu, keşif ziyareti</td>
+</tr>
+<tr>
+<td><strong>Teknik Veriler</strong></td>
+<td>IP adresi, tarayıcı bilgisi, ziyaret süresi</td>
+<td>Otomatik (çerezler)</td>
+</tr>
+</table>
+<h2>3. Kişisel Verilerin İşlenme Amaçları</h2>
+<p>Toplanan kişisel verileriniz aşağıdaki amaçlarla işlenmektedir:</p>
+<ul>
+<li>Talep ettiğiniz hizmetlerin sunulması ve proje tekliflerinin hazırlanması</li>
+<li>Ücretsiz keşif ve danışmanlık randevularının düzenlenmesi</li>
+<li>Sözleşme süreçlerinin yürütülmesi</li>
+<li>Müşteri ilişkileri yönetimi ve iletişim faaliyetleri</li>
+<li>Yasal yükümlülüklerin yerine getirilmesi</li>
+<li>Web sitesi kullanım analizleri ve iyileştirme çalışmaları</li>
+<li>Pazarlama ve tanıtım faaliyetleri (açık rızanız dahilinde)</li>
+</ul>
+<h2>4. Kişisel Verilerin İşlenme Hukuki Dayanakları</h2>
+<p>Kişisel verileriniz, KVKK'nın 5. ve 6. maddeleri kapsamında aşağıdaki hukuki dayanaklar çerçevesinde işlenmektedir:</p>
+<ul>
+<li><strong>Sözleşmenin kurulması veya ifası:</strong> Hizmet sözleşmelerinin hazırlanması ve yürütülmesi</li>
+<li><strong>Hukuki yükümlülük:</strong> Vergi, muhasebe ve yasal raporlama yükümlülükleri</li>
+<li><strong>Meşru menfaat:</strong> Şirket faaliyetlerinin yürütülmesi ve güvenliğin sağlanması</li>
+<li><strong>Açık rıza:</strong> Pazarlama iletişimleri ve çerez kullanımı</li>
+</ul>
+<h2>5. Kişisel Verilerin Aktarılması</h2>
+<p>Kişisel verileriniz, aşağıdaki durumlarda üçüncü taraflarla paylaşılabilir:</p>
+<ul>
+<li><strong>Yasal zorunluluk:</strong> Mahkeme kararı veya yasal düzenlemeler gereği yetkili kamu kurumları</li>
+<li><strong>Hizmet sağlayıcılar:</strong> Web hosting, e-posta ve yazılım hizmetleri sağlayan iş ortakları (gizlilik sözleşmesi kapsamında)</li>
+<li><strong>İş ortakları:</strong> Proje kapsamında alt yüklenici veya tedarikçilerle (yalnızca gerekli ölçüde)</li>
+</ul>
+<p>Kişisel verileriniz, açık rızanız olmaksızın yurt dışına aktarılmamaktadır.</p>
+<h2>6. Kişisel Verilerin Saklanma Süresi</h2>
+<table>
+<tr>
+<th>Veri Türü</th>
+<th>Saklama Süresi</th>
+</tr>
+<tr>
+<td>Müşteri sözleşme bilgileri</td>
+<td>Sözleşme bitiminden itibaren 10 yıl</td>
+</tr>
+<tr>
+<td>İletişim formu verileri</td>
+<td>Talep sonuçlanmasından itibaren 2 yıl</td>
+</tr>
+<tr>
+<td>Muhasebe ve fatura bilgileri</td>
+<td>Yasal süre (10 yıl)</td>
+</tr>
+<tr>
+<td>Web sitesi teknik verileri</td>
+<td>6 ay</td>
+</tr>
+<tr>
+<td>Pazarlama iletişim verileri</td>
+<td>Rıza geri alınana kadar</td>
+</tr>
+</table>
+<h2>7. Çerez (Cookie) Politikası</h2>
+<p>Web sitemiz, kullanıcı deneyimini iyileştirmek amacıyla çerezler kullanmaktadır. Kullanılan çerez türleri:</p>
+<ul>
+<li><strong>Zorunlu çerezler:</strong> Sitenin temel işlevleri için gereklidir, devre dışı bırakılamaz.</li>
+<li><strong>Analitik çerezler:</strong> Site trafiğini analiz etmek için kullanılır (Google Analytics).</li>
+<li><strong>Pazarlama çerezleri:</strong> Yalnızca açık rızanız ile kullanılır.</li>
+</ul>
+<p>Tarayıcı ayarlarınızdan çerezleri devre dışı bırakabilirsiniz. Ancak bu durumda bazı site özellikleri düzgün çalışmayabilir.</p>
+<h2>8. Veri Güvenliği</h2>
+<p>Şirketimiz, kişisel verilerinizin güvenliğini sağlamak amacıyla aşağıdaki teknik ve idari tedbirleri almaktadır:</p>
+<ul>
+<li>SSL/TLS şifreleme ile güvenli veri iletimi</li>
+<li>Erişim yetkilendirme ve parola politikaları</li>
+<li>Düzenli güvenlik güncellemeleri</li>
+<li>Çalışan gizlilik eğitimleri</li>
+<li>Veri minimizasyonu ilkesi uygulaması</li>
+</ul>
+<h2>9. İlgili Kişi Hakları</h2>
+<p>KVKK'nın 11. maddesi kapsamında aşağıdaki haklara sahipsiniz:</p>
+<ul>
+<li>Kişisel verilerinizin işlenip işlenmediğini öğrenme</li>
+<li>İşlenmişse buna ilişkin bilgi talep etme</li>
+<li>İşlenme amacını ve amacına uygun kullanılıp kullanılmadığını öğrenme</li>
+<li>Yurt içinde veya yurt dışında aktarıldığı üçüncü kişileri bilme</li>
+<li>Eksik veya yanlış işlenmiş verilerin düzeltilmesini isteme</li>
+<li>KVKK'nın 7. maddesi kapsamında silinmesini veya yok edilmesini isteme</li>
+<li>İşlenen verilerin münhasıran otomatik sistemler vasıtasıyla analiz edilmesi suretiyle aleyhinize bir sonucun ortaya çıkmasına itiraz etme</li>
+<li>Kanuna aykırı işlenmesi sebebiyle zarara uğramanız hâlinde zararın giderilmesini talep etme</li>
+</ul>
+<h2>10. Başvuru Yöntemi</h2>
+<p>Yukarıda belirtilen haklarınızı kullanmak için aşağıdaki yöntemlerle başvurabilirsiniz:</p>
+<div class="kvk-info-box">
+<p>
+<strong>📧 E-posta:</strong> <a href="mailto:info@gokyil.com.tr">info@gokyil.com.tr</a><br/>
+<strong>📞 Telefon:</strong> <a href="tel:05323746945">0532 374 69 45</a><br/>
+<strong>📍 Posta:</strong> Yenişehir Mah. No:4 (Taş Yapı 2)/12 Merkez, Kars / Türkiye<br/><br/>
+                    Başvurularınız, kimliğinizin doğrulanmasının ardından <strong>30 gün</strong> içinde yanıtlanacaktır.
+                </p>
+</div>
+<h2>11. Kişisel Verileri Koruma Kurulu'na Şikâyet</h2>
+<p>Başvurunuzun reddedilmesi, verilen cevabın yetersiz bulunması veya süresinde cevap verilmemesi hâllerinde; cevabı öğrendiğiniz tarihten itibaren otuz ve her hâlde başvuru tarihinden itibaren altmış gün içinde Kişisel Verileri Koruma Kurulu'na şikâyette bulunma hakkınız mevcuttur.</p>
+<p><strong>Kişisel Verileri Koruma Kurumu:</strong> <a href="https://www.kvkk.gov.tr" target="_blank">www.kvkk.gov.tr</a></p>
+<div class="kvk-update">
+<p>Bu Aydınlatma Metni en son <strong>21 Temmuz 2026</strong> tarihinde güncellenmiştir. Şirketimiz, yasal düzenlemeler veya iş süreçlerindeki değişiklikler doğrultusunda bu metni güncelleme hakkını saklı tutar.</p>
+</div>
+</div>
+</div>
+</section>
+<!-- FOOTER -->
+<footer>
+<div class="container">
+<div class="footer-grid">
+<div class="footer-brand">
+<a class="logo" href="index.html">
+<svg class="logo-svg" style="width:45px;height:45px;" viewbox="0 0 120 120" xmlns="http://www.w3.org/2000/svg">
+<line stroke="#666" stroke-width="1.2" x1="60" x2="60" y1="10" y2="105"></line>
+<line stroke="#E84B1A" stroke-width="2.5" x1="20" x2="100" y1="105" y2="105"></line>
+<path d="M60,10 Q35,30 25,55 Q20,70 22,85 Q35,95 60,100 Q85,95 98,85 Q100,70 95,55 Q85,30 60,10" fill="none" stroke="#555" stroke-width="1"></path>
+<path d="M60,10 Q42,28 36,50 Q32,65 34,80 Q44,92 60,97 Q76,92 86,80 Q88,65 84,50 Q78,28 60,10" fill="none" stroke="#555" stroke-width="1"></path>
+<path d="M60,10 Q50,26 47,45 Q44,60 46,75 Q52,88 60,93 Q68,88 74,75 Q76,60 73,45 Q70,26 60,10" fill="none" stroke="#555" stroke-width="1"></path>
+<path d="M28,60 Q44,55 60,54 Q76,55 92,60" fill="none" stroke="#666" stroke-width="0.8"></path>
+<path d="M24,75 Q42,70 60,69 Q78,70 96,75" fill="none" stroke="#666" stroke-width="0.8"></path>
+<path d="M32,45 Q46,41 60,40 Q74,41 88,45" fill="none" stroke="#666" stroke-width="0.8"></path>
+<path d="M60,10 Q30,35 22,70 Q20,85 25,100" fill="none" stroke="#E84B1A" stroke-linecap="round" stroke-width="2.8"></path>
+</svg>
+<div class="logo-text">
+<span class="brand">GÖK YIL YAPI</span>
+<span class="tagline">İnşaat Müşavirlik Yapı Mühendislik</span>
+</div>
+</a>
+<p>Türkiye genelinde hizmet veren güvenilir inşaat ve mühendislik firmamızla 30 yılı aşkın deneyimimizle yanınızdayız.</p>
+</div>
+<div class="footer-col">
+<h4>Hızlı Bağlantılar</h4>
+<ul>
+<li><a href="index.html">Ana Sayfa</a></li>
+<li><a href="hakkimizda.html">Hakkımızda</a></li>
+<li><a href="hizmetler.html">Hizmetler</a></li>
+<li><a href="blog.html">Blog</a></li>
+<li><a href="kvk.html">KVK Metni</a></li>
+<li><a href="iletisim.html">İletişim</a></li>
+</ul>
+</div>
+<div class="footer-col">
+<h4>Hizmetlerimiz</h4>
+<ul>
+<li><a href="hizmetler.html">Yapı Güçlendirme</a></li>
+<li><a href="hizmetler.html">Proje Yönetimi</a></li>
+<li><a href="hizmetler.html">Deprem Analizi</a></li>
+<li><a href="hizmetler.html">Kentsel Dönüşüm</a></li>
+<li><a href="hizmetler.html">Laboratuvar &amp; Denetim</a></li>
+<li><a href="hizmetler.html">Mühendislik Danışmanlığı</a></li>
+</ul>
+</div>
+<div class="footer-col">
+<h4>İletişim</h4>
+<div class="contact-item">
+<span class="icon">📍</span>
+<span class="text">Yenişehir Mah. No:4 (Taş Yapı 2)/12 Merkez, Kars / Türkiye</span>
+</div>
+<div class="contact-item">
+<span class="icon">📞</span>
+<span class="text"><a href="tel:05323746945">0532 374 69 45</a></span>
+</div>
+<div class="contact-item">
+<span class="icon">✉️</span>
+<span class="text"><a href="mailto:info@gokyil.com.tr">info@gokyil.com.tr</a></span>
+</div>
+</div>
+</div>
+<div class="footer-bottom">
+<p>© 2026 Gök Yıl İnşaat Müşavirlik Yapı Mühendislik Ltd. Şti. — Tüm hakları saklıdır.</p>
+<p><a href="kvk.html">KVK Aydınlatma Metni</a> | <a href="http://www.gokyil.com.tr">gokyil.com.tr</a></p>
+</div>
+</div>
+</footer>
+<button class="scroll-top" id="scrollTop" onclick="window.scrollTo({top:0,behavior:'smooth'})">↑</button>
+<script>
+function toggleMenu() { document.getElementById('mobileMenu').classList.toggle('open'); }
+window.addEventListener('scroll', () => {
+    const btn = document.getElementById('scrollTop');
+    if (window.scrollY > 400) btn.classList.add('visible');
+    else btn.classList.remove('visible');
+});
+</script>
+</body>
+</html>

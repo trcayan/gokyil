@@ -1,0 +1,452 @@
+<!DOCTYPE html>
+
+<html lang="tr">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<meta content="Gök Yıl İnşaat Blog - Yapı güçlendirme, deprem analizi, kentsel dönüşüm ve inşaat mühendisliği hakkında uzman makaleler ve rehberler." name="description"/>
+<meta content="yapı güçlendirme, deprem analizi, kentsel dönüşüm, inşaat mühendisliği, bina güçlendirme, deprem performans analizi, riskli yapı tespiti" name="keywords"/>
+<title>Blog &amp; Makaleler | Gök Yıl İnşaat Müşavirlik Yapı Mühendislik</title>
+<link href="style.css" rel="stylesheet"/>
+<style>
+        .blog-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 28px;
+        }
+        .blog-card {
+            background: var(--white);
+            border-radius: var(--radius-lg);
+            overflow: hidden;
+            border: 1px solid var(--border);
+            transition: var(--transition);
+        }
+        .blog-card:hover {
+            transform: translateY(-6px);
+            box-shadow: var(--shadow-hover);
+            border-color: transparent;
+        }
+        .blog-card-img {
+            height: 200px;
+            overflow: hidden;
+        }
+        .blog-card-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+        .blog-card:hover .blog-card-img img {
+            transform: scale(1.06);
+        }
+        .blog-card-body {
+            padding: 24px;
+        }
+        .blog-meta {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 12px;
+        }
+        .blog-cat {
+            background: rgba(232,75,26,0.1);
+            color: var(--primary);
+            padding: 4px 12px;
+            border-radius: 50px;
+            font-size: 0.72rem;
+            font-weight: 700;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+        }
+        .blog-date {
+            font-size: 0.78rem;
+            color: var(--gray-light);
+        }
+        .blog-card h3 {
+            font-size: 1rem;
+            color: var(--secondary);
+            margin-bottom: 10px;
+            line-height: 1.4;
+        }
+        .blog-card p {
+            font-size: 0.85rem;
+            color: var(--gray);
+            line-height: 1.7;
+            margin-bottom: 16px;
+        }
+        .blog-read-more {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            color: var(--primary);
+            font-weight: 700;
+            font-size: 0.85rem;
+            transition: var(--transition);
+        }
+        .blog-read-more:hover { gap: 10px; }
+        .blog-featured {
+            background: var(--gray-bg);
+            border-radius: var(--radius-lg);
+            padding: 40px;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            align-items: center;
+            margin-bottom: 50px;
+            border: 1px solid var(--border);
+        }
+        .blog-featured img {
+            width: 100%;
+            height: 300px;
+            object-fit: cover;
+            border-radius: var(--radius);
+        }
+        .blog-featured .blog-cat { margin-bottom: 12px; display: inline-block; }
+        .blog-featured h2 {
+            font-size: 1.6rem;
+            color: var(--secondary);
+            margin-bottom: 16px;
+            line-height: 1.3;
+        }
+        .blog-featured p {
+            color: var(--gray);
+            line-height: 1.8;
+            margin-bottom: 20px;
+        }
+        .categories {
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+            margin-bottom: 40px;
+            justify-content: center;
+        }
+        .cat-btn {
+            padding: 8px 20px;
+            border-radius: 50px;
+            border: 1.5px solid var(--border);
+            background: var(--white);
+            color: var(--gray);
+            font-size: 0.85rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: var(--transition);
+            font-family: 'Montserrat', sans-serif;
+        }
+        .cat-btn:hover, .cat-btn.active {
+            background: var(--primary);
+            color: var(--white);
+            border-color: var(--primary);
+        }
+        @media (max-width: 768px) {
+            .blog-grid { grid-template-columns: 1fr; }
+            .blog-featured { grid-template-columns: 1fr; }
+        }
+        @media (max-width: 1024px) {
+            .blog-grid { grid-template-columns: repeat(2, 1fr); }
+        }
+    </style>
+</head>
+<body>
+<!-- HEADER -->
+<header>
+<nav class="navbar">
+<a class="logo" href="index.html">
+<svg class="logo-svg" viewbox="0 0 120 120" xmlns="http://www.w3.org/2000/svg">
+<line stroke="#999" stroke-width="1.2" x1="60" x2="60" y1="10" y2="105"></line>
+<line stroke="#E84B1A" stroke-width="2.5" x1="20" x2="100" y1="105" y2="105"></line>
+<path d="M60,10 Q35,30 25,55 Q20,70 22,85 Q35,95 60,100 Q85,95 98,85 Q100,70 95,55 Q85,30 60,10" fill="none" stroke="#bbb" stroke-width="1"></path>
+<path d="M60,10 Q42,28 36,50 Q32,65 34,80 Q44,92 60,97 Q76,92 86,80 Q88,65 84,50 Q78,28 60,10" fill="none" stroke="#bbb" stroke-width="1"></path>
+<path d="M60,10 Q50,26 47,45 Q44,60 46,75 Q52,88 60,93 Q68,88 74,75 Q76,60 73,45 Q70,26 60,10" fill="none" stroke="#bbb" stroke-width="1"></path>
+<path d="M28,60 Q44,55 60,54 Q76,55 92,60" fill="none" stroke="#ccc" stroke-width="0.8"></path>
+<path d="M24,75 Q42,70 60,69 Q78,70 96,75" fill="none" stroke="#ccc" stroke-width="0.8"></path>
+<path d="M32,45 Q46,41 60,40 Q74,41 88,45" fill="none" stroke="#ccc" stroke-width="0.8"></path>
+<path d="M60,10 Q30,35 22,70 Q20,85 25,100" fill="none" stroke="#E84B1A" stroke-linecap="round" stroke-width="2.8"></path>
+</svg>
+<div class="logo-text">
+<span class="brand">GÖK YIL YAPI</span>
+<span class="tagline">İnşaat Müşavirlik Yapı Mühendislik Ltd. Şti.</span>
+</div>
+</a>
+<div class="nav-links">
+<a href="index.html">Ana Sayfa</a>
+<a href="hakkimizda.html">Hakkımızda</a>
+<a href="hizmetler.html">Hizmetler</a>
+<a class="active" href="blog.html">Blog</a>
+<a href="iletisim.html">İletişim</a>
+<a class="nav-cta" href="tel:05323746945">📞 0532 374 69 45</a>
+</div>
+<div class="hamburger" onclick="toggleMenu()"><span></span><span></span><span></span></div>
+</nav>
+<div class="mobile-menu" id="mobileMenu">
+<a href="index.html">Ana Sayfa</a>
+<a href="hakkimizda.html">Hakkımızda</a>
+<a href="hizmetler.html">Hizmetler</a>
+<a href="blog.html">Blog</a>
+<a href="iletisim.html">İletişim</a>
+<a href="tel:05323746945">📞 0532 374 69 45</a>
+</div>
+</header>
+<!-- PAGE HERO -->
+<section class="page-hero">
+<div class="page-hero-content">
+<div class="container">
+<span class="section-tag">Uzman İçerikler</span>
+<h1>Blog &amp; <span>Makaleler</span></h1>
+<p>Yapı güçlendirme, deprem analizi ve inşaat mühendisliği hakkında uzman rehberler.</p>
+<div class="breadcrumb">
+<a href="index.html">Ana Sayfa</a>
+<span>/</span>
+<span>Blog</span>
+</div>
+</div>
+</div>
+</section>
+<section style="background:var(--white);">
+<div class="container">
+<!-- Kategoriler -->
+<div class="categories">
+<button class="cat-btn active">Tümü</button>
+<button class="cat-btn">Yapı Güçlendirme</button>
+<button class="cat-btn">Deprem</button>
+<button class="cat-btn">Kentsel Dönüşüm</button>
+<button class="cat-btn">Proje Yönetimi</button>
+<button class="cat-btn">Yasal Süreçler</button>
+</div>
+<!-- Öne Çıkan Makale -->
+<div class="blog-featured">
+<img alt="Depreme Dayanıklı Bina" src="https://images.moneycontrol.com/static-mcnews/2023/02/4-Earthquake-resistant-buildings.jpg"/>
+<div>
+<span class="blog-cat">Deprem</span>
+<h2>Binanız Depreme Dayanıklı mı? Evde Yapabileceğiniz 10 Kontrol</h2>
+<p>Türkiye'nin büyük bölümü aktif deprem kuşağında yer almaktadır. Binanızın deprem güvenliğini değerlendirmek için uzman bir mühendis çağırmadan önce kendiniz yapabileceğiniz temel kontrolleri bu rehberde derledik.</p>
+<div class="blog-meta">
+<span class="blog-date">📅 15 Temmuz 2026</span>
+<span class="blog-date">⏱️ 8 dk okuma</span>
+</div>
+<a class="btn-primary" href="blog-deprem-kontrolu.html" style="display:inline-flex;margin-top:10px;">Makaleyi Oku →</a>
+</div>
+</div>
+<!-- Blog Grid -->
+<div class="blog-grid">
+<div class="blog-card">
+<div class="blog-card-img">
+<img alt="Yapı Güçlendirme Yöntemleri" src="https://engineeringdiscoveries.com/wp-content/uploads/2024/11/Reinforced-Concrete-Structural-Elements-scaled.jpg"/>
+</div>
+<div class="blog-card-body">
+<div class="blog-meta">
+<span class="blog-cat">Yapı Güçlendirme</span>
+<span class="blog-date">10 Temmuz 2026</span>
+</div>
+<h3>Yapı Güçlendirme Yöntemleri: Betonarme, Çelik ve FRP Karşılaştırması</h3>
+<p>Hangi güçlendirme yöntemi binanız için en uygun? Betonarme mantolama, çelik takviye ve karbon fiber (FRP) yöntemlerini maliyet ve etkinlik açısından karşılaştırdık.</p>
+<a class="blog-read-more" href="blog-guclendrme-yontemleri.html">Devamını Oku →</a>
+</div>
+</div>
+<div class="blog-card">
+<div class="blog-card-img">
+<img alt="Kentsel Dönüşüm" src="https://www.sevenspikes.com.tr/wp-content/uploads/slider/cache/6b0003be7cee0df8b1ffb88ad2593cfe/modern-building-construction-scaled.jpg"/>
+</div>
+<div class="blog-card-body">
+<div class="blog-meta">
+<span class="blog-cat">Kentsel Dönüşüm</span>
+<span class="blog-date">5 Temmuz 2026</span>
+</div>
+<h3>Kentsel Dönüşümde Hak Sahipliği: Bilmeniz Gereken Her Şey</h3>
+<p>Riskli yapı tespitinden yıkım ve yeniden inşa sürecine kadar kentsel dönüşümde haklarınız neler? Yasal süreçleri ve devlet desteklerini adım adım anlattık.</p>
+<a class="blog-read-more" href="blog-kentsel-donusum.html">Devamını Oku →</a>
+</div>
+</div>
+<div class="blog-card">
+<div class="blog-card-img">
+<img alt="Deprem Performans Analizi" src="https://structville.com/wp-content/uploads/2020/10/reinforced-concrete-structure.jpg"/>
+</div>
+<div class="blog-card-body">
+<div class="blog-meta">
+<span class="blog-cat">Deprem</span>
+<span class="blog-date">1 Temmuz 2026</span>
+</div>
+<h3>Deprem Performans Analizi Nedir? Nasıl Yapılır?</h3>
+<p>Türkiye Bina Deprem Yönetmeliği kapsamında deprem performans analizi süreci, aşamaları ve sonuçlarının nasıl yorumlanacağını uzman mühendislerimiz anlattı.</p>
+<a class="blog-read-more" href="blog-deprem-performans.html">Devamını Oku →</a>
+</div>
+</div>
+<div class="blog-card">
+<div class="blog-card-img">
+<img alt="Proje Yönetimi" src="https://www.michelli.com/wp-content/uploads/2023/07/Two-engineers-walk-a-construction-site-scaled.jpg"/>
+</div>
+<div class="blog-card-body">
+<div class="blog-meta">
+<span class="blog-cat">Proje Yönetimi</span>
+<span class="blog-date">25 Haziran 2026</span>
+</div>
+<h3>İnşaat Projesinde Mühendislik Müşavirliği Neden Önemlidir?</h3>
+<p>Bir inşaat projesinde bağımsız mühendislik müşavirliği almanın faydaları, maliyetlere etkisi ve proje başarısına katkısını ele aldık.</p>
+<a class="blog-read-more" href="blog-muhendislik-musavirligi.html">Devamını Oku →</a>
+</div>
+</div>
+<div class="blog-card">
+<div class="blog-card-img">
+<img alt="Riskli Yapı Tespiti" src="https://acaryp.com/en/wp-content/uploads/2023/07/1.jpg"/>
+</div>
+<div class="blog-card-body">
+<div class="blog-meta">
+<span class="blog-cat">Yasal Süreçler</span>
+<span class="blog-date">20 Haziran 2026</span>
+</div>
+<h3>Riskli Yapı Tespiti Nasıl Yapılır? Başvuru Süreci</h3>
+<p>6306 sayılı Afet Riski Altındaki Alanların Dönüştürülmesi Hakkında Kanun kapsamında riskli yapı tespiti başvurusu nasıl yapılır? Adım adım rehber.</p>
+<a class="blog-read-more" href="blog-riskli-yapi.html">Devamını Oku →</a>
+</div>
+</div>
+<div class="blog-card">
+<div class="blog-card-img">
+<img alt="Bina Güçlendirme Maliyeti" src="https://hecoengineers.com/wp-content/uploads/2024/11/Reinforced-Concrete-1.jpg"/>
+</div>
+<div class="blog-card-body">
+<div class="blog-meta">
+<span class="blog-cat">Yapı Güçlendirme</span>
+<span class="blog-date">15 Haziran 2026</span>
+</div>
+<h3>Bina Güçlendirme Maliyeti 2026: Neye Göre Belirlenir?</h3>
+<p>Yapı güçlendirme maliyetini etkileyen faktörler neler? Bina büyüklüğü, güçlendirme yöntemi ve zemin koşullarına göre maliyet analizi rehberi.</p>
+<a class="blog-read-more" href="blog-guclendrme-maliyeti.html">Devamını Oku →</a>
+</div>
+</div>
+<div class="blog-card">
+<div class="blog-card-img">
+<img alt="Depreme Dayanıklı Yapı" src="https://www.jadanconstructiongroup.com/uploads/blog/Earthquake Resistant Building.webp"/>
+</div>
+<div class="blog-card-body">
+<div class="blog-meta">
+<span class="blog-cat">Deprem</span>
+<span class="blog-date">10 Haziran 2026</span>
+</div>
+<h3>Deprem Öldürmez, Bina Öldürür: Yapı Güvenliğinde Kritik Noktalar</h3>
+<p>Depremlerde can kayıplarının büyük çoğunluğu yapı çökmelerinden kaynaklanmaktadır. Yapı güvenliğini artırmak için alınması gereken önlemleri derledik.</p>
+<a class="blog-read-more" href="blog-deprem-bina.html">Devamını Oku →</a>
+</div>
+</div>
+<div class="blog-card">
+<div class="blog-card-img">
+<img alt="Yapı Denetimi" src="https://scengineering.in/wp-content/uploads/2024/08/civil-engineer-supervise-roof-construction-workers-work-aerial-view-unrecognized-site-building-development-77779211.webp"/>
+</div>
+<div class="blog-card-body">
+<div class="blog-meta">
+<span class="blog-cat">Yasal Süreçler</span>
+<span class="blog-date">5 Haziran 2026</span>
+</div>
+<h3>Yapı Denetimi Nedir? Denetim Firması Nasıl Seçilir?</h3>
+<p>Türkiye'de yapı denetim sistemi nasıl işler? Denetim firması seçerken dikkat edilmesi gereken kriterler ve yasal yükümlülükler hakkında kapsamlı rehber.</p>
+<a class="blog-read-more" href="blog-yapi-denetimi.html">Devamını Oku →</a>
+</div>
+</div>
+<div class="blog-card">
+<div class="blog-card-img">
+<img alt="FRP Güçlendirme" src="https://quantity-takeoff.com/img/earthquake-resistant-buildings.jpg"/>
+</div>
+<div class="blog-card-body">
+<div class="blog-meta">
+<span class="blog-cat">Yapı Güçlendirme</span>
+<span class="blog-date">1 Haziran 2026</span>
+</div>
+<h3>Karbon Fiber (FRP) ile Yapı Güçlendirme: Avantajları ve Uygulama Süreci</h3>
+<p>Karbon fiber takviyeli polimer (FRP/CFRP) ile yapı güçlendirme yöntemi nedir, nasıl uygulanır, hangi yapılarda tercih edilir? Teknik detaylar ve maliyet analizi.</p>
+<a class="blog-read-more" href="blog-frp-guclendrme.html">Devamını Oku →</a>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- CTA -->
+<section class="cta-section" style="margin-top:60px;">
+<div class="container">
+<h2>Projeniz İçin Ücretsiz Danışmanlık</h2>
+<p>Uzman mühendislerimiz sorularınızı yanıtlamak için hazır.</p>
+<a class="btn-white" href="iletisim.html">📞 Hemen İletişime Geçin</a>
+</div>
+</section>
+<!-- FOOTER -->
+<footer>
+<div class="container">
+<div class="footer-grid">
+<div class="footer-brand">
+<a class="logo" href="index.html">
+<svg class="logo-svg" style="width:45px;height:45px;" viewbox="0 0 120 120" xmlns="http://www.w3.org/2000/svg">
+<line stroke="#666" stroke-width="1.2" x1="60" x2="60" y1="10" y2="105"></line>
+<line stroke="#E84B1A" stroke-width="2.5" x1="20" x2="100" y1="105" y2="105"></line>
+<path d="M60,10 Q35,30 25,55 Q20,70 22,85 Q35,95 60,100 Q85,95 98,85 Q100,70 95,55 Q85,30 60,10" fill="none" stroke="#555" stroke-width="1"></path>
+<path d="M60,10 Q42,28 36,50 Q32,65 34,80 Q44,92 60,97 Q76,92 86,80 Q88,65 84,50 Q78,28 60,10" fill="none" stroke="#555" stroke-width="1"></path>
+<path d="M60,10 Q50,26 47,45 Q44,60 46,75 Q52,88 60,93 Q68,88 74,75 Q76,60 73,45 Q70,26 60,10" fill="none" stroke="#555" stroke-width="1"></path>
+<path d="M28,60 Q44,55 60,54 Q76,55 92,60" fill="none" stroke="#666" stroke-width="0.8"></path>
+<path d="M24,75 Q42,70 60,69 Q78,70 96,75" fill="none" stroke="#666" stroke-width="0.8"></path>
+<path d="M32,45 Q46,41 60,40 Q74,41 88,45" fill="none" stroke="#666" stroke-width="0.8"></path>
+<path d="M60,10 Q30,35 22,70 Q20,85 25,100" fill="none" stroke="#E84B1A" stroke-linecap="round" stroke-width="2.8"></path>
+</svg>
+<div class="logo-text">
+<span class="brand">GÖK YIL YAPI</span>
+<span class="tagline">İnşaat Müşavirlik Yapı Mühendislik</span>
+</div>
+</a>
+<p>Türkiye genelinde hizmet veren güvenilir inşaat ve mühendislik firmamızla 30 yılı aşkın deneyimimizle yanınızdayız.</p>
+</div>
+<div class="footer-col">
+<h4>Hızlı Bağlantılar</h4>
+<ul>
+<li><a href="index.html">Ana Sayfa</a></li>
+<li><a href="hakkimizda.html">Hakkımızda</a></li>
+<li><a href="hizmetler.html">Hizmetler</a></li>
+<li><a href="blog.html">Blog</a></li>
+<li><a href="kvk.html">KVK Metni</a></li>
+<li><a href="iletisim.html">İletişim</a></li>
+</ul>
+</div>
+<div class="footer-col">
+<h4>Hizmetlerimiz</h4>
+<ul>
+<li><a href="hizmetler.html">Yapı Güçlendirme</a></li>
+<li><a href="hizmetler.html">Proje Yönetimi</a></li>
+<li><a href="hizmetler.html">Deprem Analizi</a></li>
+<li><a href="hizmetler.html">Kentsel Dönüşüm</a></li>
+<li><a href="hizmetler.html">Laboratuvar &amp; Denetim</a></li>
+<li><a href="hizmetler.html">Mühendislik Danışmanlığı</a></li>
+</ul>
+</div>
+<div class="footer-col">
+<h4>İletişim</h4>
+<div class="contact-item">
+<span class="icon">📍</span>
+<span class="text">Yenişehir Mah. No:4 (Taş Yapı 2)/12 Merkez, Kars / Türkiye</span>
+</div>
+<div class="contact-item">
+<span class="icon">📞</span>
+<span class="text"><a href="tel:05323746945">0532 374 69 45</a></span>
+</div>
+<div class="contact-item">
+<span class="icon">✉️</span>
+<span class="text"><a href="mailto:info@gokyil.com.tr">info@gokyil.com.tr</a></span>
+</div>
+</div>
+</div>
+<div class="footer-bottom">
+<p>© 2026 Gök Yıl İnşaat Müşavirlik Yapı Mühendislik Ltd. Şti. — Tüm hakları saklıdır.</p>
+<p><a href="kvk.html">KVK Aydınlatma Metni</a> | <a href="http://www.gokyil.com.tr">gokyil.com.tr</a></p>
+</div>
+</div>
+</footer>
+<button class="scroll-top" id="scrollTop" onclick="window.scrollTo({top:0,behavior:'smooth'})">↑</button>
+<script>
+function toggleMenu() { document.getElementById('mobileMenu').classList.toggle('open'); }
+window.addEventListener('scroll', () => {
+    const btn = document.getElementById('scrollTop');
+    if (window.scrollY > 400) btn.classList.add('visible');
+    else btn.classList.remove('visible');
+});
+document.querySelectorAll('.cat-btn').forEach(btn => {
+    btn.addEventListener('click', () => {
+        document.querySelectorAll('.cat-btn').forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+    });
+});
+</script>
+</body>
+</html>
