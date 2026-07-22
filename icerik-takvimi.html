@@ -1,0 +1,443 @@
+<!DOCTYPE html>
+
+<html lang="tr">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<meta content="Gök Yıl İnşaat 2026 İçerik Takvimi - Yapı güçlendirme, deprem analizi ve inşaat mühendisliği konularında aylık blog planı." name="description"/>
+<title>2026 İçerik Takvimi | Gök Yıl İnşaat</title>
+<link href="style.css" rel="stylesheet"/>
+<style>
+        .takvim-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-bottom:60px}
+        .takvim-card{background:var(--white);border-radius:var(--radius-lg);overflow:hidden;border:1px solid var(--border);transition:var(--transition)}
+        .takvim-card:hover{box-shadow:var(--shadow-hover);transform:translateY(-4px)}
+        .takvim-header{background:linear-gradient(135deg,var(--primary),var(--primary-dark));padding:20px 24px;color:white}
+        .takvim-header .ay{font-family:'Montserrat',sans-serif;font-size:1.2rem;font-weight:800}
+        .takvim-header .tema{font-size:0.78rem;opacity:0.85;margin-top:4px}
+        .takvim-body{padding:20px 24px}
+        .takvim-item{display:flex;gap:10px;align-items:flex-start;margin-bottom:14px;padding-bottom:14px;border-bottom:1px solid var(--border)}
+        .takvim-item:last-child{border-bottom:none;margin-bottom:0;padding-bottom:0}
+        .takvim-num{width:24px;height:24px;min-width:24px;background:rgba(232,75,26,0.1);color:var(--primary);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:0.72rem;font-weight:800;font-family:'Montserrat',sans-serif}
+        .takvim-text h4{font-size:0.85rem;color:var(--secondary);margin-bottom:3px;line-height:1.3}
+        .takvim-text .kw{font-size:0.72rem;color:var(--primary);font-weight:600}
+        .seo-tips{background:var(--gray-bg);border-radius:var(--radius-lg);padding:40px;margin-bottom:60px}
+        .seo-tips h2{font-size:1.6rem;color:var(--secondary);margin-bottom:24px}
+        .tips-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:20px}
+        .tip-card{background:var(--white);border-radius:var(--radius);padding:24px;border:1px solid var(--border)}
+        .tip-card h4{font-size:0.95rem;color:var(--secondary);margin-bottom:10px}
+        .tip-card p{font-size:0.85rem;color:var(--gray);line-height:1.7}
+        .keyword-table{width:100%;border-collapse:collapse;margin:24px 0}
+        .keyword-table th{background:var(--primary);color:white;padding:12px 16px;text-align:left;font-family:'Montserrat',sans-serif;font-size:0.85rem}
+        .keyword-table td{padding:10px 16px;border-bottom:1px solid var(--border);color:var(--gray);font-size:0.85rem}
+        .keyword-table tr:nth-child(even) td{background:var(--gray-bg)}
+        .zorluk{padding:3px 10px;border-radius:50px;font-size:0.72rem;font-weight:700}
+        .kolay{background:rgba(16,185,129,0.1);color:#059669}
+        .orta{background:rgba(245,158,11,0.1);color:#d97706}
+        .zor{background:rgba(239,68,68,0.1);color:#dc2626}
+        @media(max-width:768px){.takvim-grid{grid-template-columns:1fr}.tips-grid{grid-template-columns:1fr}}
+    </style>
+</head>
+<body>
+<header>
+<nav class="navbar">
+<a class="logo" href="index.html">
+<svg class="logo-svg" viewbox="0 0 120 120" xmlns="http://www.w3.org/2000/svg">
+<line stroke="#999" stroke-width="1.2" x1="60" x2="60" y1="10" y2="105"></line>
+<line stroke="#E84B1A" stroke-width="2.5" x1="20" x2="100" y1="105" y2="105"></line>
+<path d="M60,10 Q35,30 25,55 Q20,70 22,85 Q35,95 60,100 Q85,95 98,85 Q100,70 95,55 Q85,30 60,10" fill="none" stroke="#bbb" stroke-width="1"></path>
+<path d="M60,10 Q30,35 22,70 Q20,85 25,100" fill="none" stroke="#E84B1A" stroke-linecap="round" stroke-width="2.8"></path>
+</svg>
+<div class="logo-text"><span class="brand">GÖK YIL YAPI</span><span class="tagline">İnşaat Müşavirlik Yapı Mühendislik Ltd. Şti.</span></div>
+</a>
+<div class="nav-links">
+<a href="index.html">Ana Sayfa</a><a href="hakkimizda.html">Hakkımızda</a>
+<a href="hizmetler.html">Hizmetler</a><a class="active" href="blog.html">Blog</a>
+<a href="iletisim.html">İletişim</a>
+<a class="nav-cta" href="tel:05323746945">📞 0532 374 69 45</a>
+</div>
+<div class="hamburger" onclick="toggleMenu()"><span></span><span></span><span></span></div>
+</nav>
+<div class="mobile-menu" id="mobileMenu">
+<a href="index.html">Ana Sayfa</a><a href="hakkimizda.html">Hakkımızda</a>
+<a href="hizmetler.html">Hizmetler</a><a href="blog.html">Blog</a>
+<a href="iletisim.html">İletişim</a><a href="tel:05323746945">📞 0532 374 69 45</a>
+</div>
+</header>
+<section class="page-hero">
+<div class="page-hero-content"><div class="container">
+<span class="section-tag">SEO Stratejisi</span>
+<h1>2026 İçerik <span>Takvimi</span></h1>
+<p>Organik trafik için aylık blog planı, anahtar kelime stratejisi ve yerel SEO fırsatları.</p>
+<div class="breadcrumb"><a href="index.html">Ana Sayfa</a><span>/</span><a href="blog.html">Blog</a><span>/</span><span>İçerik Takvimi</span></div>
+</div></div>
+</section>
+<section style="background:var(--white);">
+<div class="container">
+<div class="section-header">
+<span class="section-tag">Hedef Anahtar Kelimeler</span>
+<h2>Yüksek Trafik <span>Anahtar Kelimeler</span></h2>
+<p>Rakip analizi ve arama trendlerine göre belirlenen öncelikli anahtar kelimeler.</p>
+<div class="divider"></div>
+</div>
+<table class="keyword-table">
+<tr><th>Anahtar Kelime</th><th>Aylık Arama</th><th>Zorluk</th><th>Öncelik</th></tr>
+<tr><td>yapı güçlendirme</td><td>~8.000</td><td><span class="zorluk orta">Orta</span></td><td>🔴 Yüksek</td></tr>
+<tr><td>bina güçlendirme</td><td>~6.500</td><td><span class="zorluk orta">Orta</span></td><td>🔴 Yüksek</td></tr>
+<tr><td>deprem performans analizi</td><td>~4.200</td><td><span class="zorluk kolay">Kolay</span></td><td>🔴 Yüksek</td></tr>
+<tr><td>kentsel dönüşüm başvuru</td><td>~12.000</td><td><span class="zorluk zor">Zor</span></td><td>🟡 Orta</td></tr>
+<tr><td>riskli yapı tespiti</td><td>~5.800</td><td><span class="zorluk orta">Orta</span></td><td>🔴 Yüksek</td></tr>
+<tr><td>bina güçlendirme maliyeti 2026</td><td>~3.100</td><td><span class="zorluk kolay">Kolay</span></td><td>🔴 Yüksek</td></tr>
+<tr><td>FRP güçlendirme</td><td>~2.400</td><td><span class="zorluk kolay">Kolay</span></td><td>🟡 Orta</td></tr>
+<tr><td>inşaat mühendisliği danışmanlık</td><td>~1.800</td><td><span class="zorluk kolay">Kolay</span></td><td>🟡 Orta</td></tr>
+<tr><td>deprem güçlendirme Kars</td><td>~400</td><td><span class="zorluk kolay">Kolay</span></td><td>🔴 Yüksek (Yerel)</td></tr>
+<tr><td>inşaat firması Kars</td><td>~300</td><td><span class="zorluk kolay">Kolay</span></td><td>🔴 Yüksek (Yerel)</td></tr>
+<tr><td>yapı denetim firması</td><td>~2.200</td><td><span class="zorluk orta">Orta</span></td><td>🟡 Orta</td></tr>
+<tr><td>zemin etüdü fiyatları</td><td>~1.600</td><td><span class="zorluk kolay">Kolay</span></td><td>🟢 Düşük</td></tr>
+</table>
+<div class="section-header" style="margin-top:60px;">
+<span class="section-tag">Aylık Plan</span>
+<h2>2026 İçerik <span>Takvimi</span></h2>
+<p>Her ay 2-3 makale hedefi ile organik trafik büyümesi planı.</p>
+<div class="divider"></div>
+</div>
+<div class="takvim-grid">
+<!-- Ağustos 2026 -->
+<div class="takvim-card">
+<div class="takvim-header">
+<div class="ay">🌞 Ağustos 2026</div>
+<div class="tema">Tema: Yaz Dönemi Yapı Kontrolleri</div>
+</div>
+<div class="takvim-body">
+<div class="takvim-item">
+<div class="takvim-num">1</div>
+<div class="takvim-text">
+<h4>Yazın Bina Güçlendirme Yaptırmanın Avantajları</h4>
+<span class="kw">🔑 bina güçlendirme yaz dönemi</span>
+</div>
+</div>
+<div class="takvim-item">
+<div class="takvim-num">2</div>
+<div class="takvim-text">
+<h4>Kars'ta İnşaat Sezonu: Dikkat Edilmesi Gerekenler</h4>
+<span class="kw">🔑 inşaat firması Kars, yapı güçlendirme Kars</span>
+</div>
+</div>
+<div class="takvim-item">
+<div class="takvim-num">3</div>
+<div class="takvim-text">
+<h4>Zemin Etüdü Nedir? Neden Önemlidir?</h4>
+<span class="kw">🔑 zemin etüdü, zemin analizi</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Eylül 2026 -->
+<div class="takvim-card">
+<div class="takvim-header">
+<div class="ay">🍂 Eylül 2026</div>
+<div class="tema">Tema: Okul &amp; Kamu Binaları Güçlendirme</div>
+</div>
+<div class="takvim-body">
+<div class="takvim-item">
+<div class="takvim-num">1</div>
+<div class="takvim-text">
+<h4>Okul Binaları Depreme Dayanıklı mı? Türkiye Gerçeği</h4>
+<span class="kw">🔑 okul binası deprem güçlendirme</span>
+</div>
+</div>
+<div class="takvim-item">
+<div class="takvim-num">2</div>
+<div class="takvim-text">
+<h4>Kamu Binaları Güçlendirme: Yasal Zorunluluklar</h4>
+<span class="kw">🔑 kamu binası güçlendirme, deprem yönetmeliği</span>
+</div>
+</div>
+<div class="takvim-item">
+<div class="takvim-num">3</div>
+<div class="takvim-text">
+<h4>Güçlendirme mi Yıkıp Yapma mı? 2026 Karar Rehberi</h4>
+<span class="kw">🔑 güçlendirme mi yıkıp yapma mı</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Ekim 2026 -->
+<div class="takvim-card">
+<div class="takvim-header">
+<div class="ay">🍁 Ekim 2026</div>
+<div class="tema">Tema: Deprem Farkındalık Ayı</div>
+</div>
+<div class="takvim-body">
+<div class="takvim-item">
+<div class="takvim-num">1</div>
+<div class="takvim-text">
+<h4>17 Ağustos 1999'dan Bugüne: Türkiye'de Deprem Güvenliği</h4>
+<span class="kw">🔑 Türkiye deprem tarihi, yapı güvenliği</span>
+</div>
+</div>
+<div class="takvim-item">
+<div class="takvim-num">2</div>
+<div class="takvim-text">
+<h4>Deprem Sigortası (DASK) ve Yapı Güçlendirme İlişkisi</h4>
+<span class="kw">🔑 DASK sigortası, deprem güvencesi</span>
+</div>
+</div>
+<div class="takvim-item">
+<div class="takvim-num">3</div>
+<div class="takvim-text">
+<h4>Doğu Anadolu Fay Hattı ve Kars Deprem Riski</h4>
+<span class="kw">🔑 Kars deprem riski, Doğu Anadolu fay hattı</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Kasım 2026 -->
+<div class="takvim-card">
+<div class="takvim-header">
+<div class="ay">❄️ Kasım 2026</div>
+<div class="tema">Tema: Kış Öncesi Yapı Hazırlığı</div>
+</div>
+<div class="takvim-body">
+<div class="takvim-item">
+<div class="takvim-num">1</div>
+<div class="takvim-text">
+<h4>Kış Öncesi Binanızı Kontrol Ettirin: Uzman Tavsiyeleri</h4>
+<span class="kw">🔑 kış öncesi bina kontrolü, yapı bakımı</span>
+</div>
+</div>
+<div class="takvim-item">
+<div class="takvim-num">2</div>
+<div class="takvim-text">
+<h4>Soğuk İklimde Beton Dökümü: Kars ve Doğu İlleri Rehberi</h4>
+<span class="kw">🔑 soğuk havada beton dökümü, kış inşaatı</span>
+</div>
+</div>
+<div class="takvim-item">
+<div class="takvim-num">3</div>
+<div class="takvim-text">
+<h4>Kar Yükü Altında Çatı ve Yapı Güvenliği</h4>
+<span class="kw">🔑 kar yükü yapı güvenliği, çatı güçlendirme</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Aralık 2026 -->
+<div class="takvim-card">
+<div class="takvim-header">
+<div class="ay">🎄 Aralık 2026</div>
+<div class="tema">Tema: Yıl Sonu Değerlendirme &amp; 2027 Planı</div>
+</div>
+<div class="takvim-body">
+<div class="takvim-item">
+<div class="takvim-num">1</div>
+<div class="takvim-text">
+<h4>2026 Yapı Güçlendirme Sektörü: Yıl Sonu Raporu</h4>
+<span class="kw">🔑 yapı güçlendirme 2026, sektör raporu</span>
+</div>
+</div>
+<div class="takvim-item">
+<div class="takvim-num">2</div>
+<div class="takvim-text">
+<h4>2027 Kentsel Dönüşüm Hedefleri ve Devlet Destekleri</h4>
+<span class="kw">🔑 kentsel dönüşüm 2027, devlet desteği</span>
+</div>
+</div>
+<div class="takvim-item">
+<div class="takvim-num">3</div>
+<div class="takvim-text">
+<h4>Yeni Yılda Binanızı Güçlendirin: Adım Adım Başlangıç Rehberi</h4>
+<span class="kw">🔑 bina güçlendirme nasıl başlanır</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Ocak 2027 -->
+<div class="takvim-card">
+<div class="takvim-header">
+<div class="ay">🌨️ Ocak 2027</div>
+<div class="tema">Tema: Yeni Yıl, Güvenli Yapı</div>
+</div>
+<div class="takvim-body">
+<div class="takvim-item">
+<div class="takvim-num">1</div>
+<div class="takvim-text">
+<h4>Türkiye Bina Deprem Yönetmeliği 2019: Bilmeniz Gerekenler</h4>
+<span class="kw">🔑 TBDY 2019, deprem yönetmeliği</span>
+</div>
+</div>
+<div class="takvim-item">
+<div class="takvim-num">2</div>
+<div class="takvim-text">
+<h4>Kolon Güçlendirme Yöntemleri: Mantolama vs Karbon Fiber</h4>
+<span class="kw">🔑 kolon güçlendirme, mantolama</span>
+</div>
+</div>
+<div class="takvim-item">
+<div class="takvim-num">3</div>
+<div class="takvim-text">
+<h4>Perde Duvar Nedir? Yapı Güçlendirmede Rolü</h4>
+<span class="kw">🔑 perde duvar güçlendirme</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Şubat 2027 -->
+<div class="takvim-card">
+<div class="takvim-header">
+<div class="ay">💝 Şubat 2027</div>
+<div class="tema">Tema: Kahramanmaraş Depremi Yıl Dönümü</div>
+</div>
+<div class="takvim-body">
+<div class="takvim-item">
+<div class="takvim-num">1</div>
+<div class="takvim-text">
+<h4>6 Şubat Depremi 4. Yıl: Türkiye'de Yapı Güvenliği Nerede?</h4>
+<span class="kw">🔑 Kahramanmaraş depremi, yapı güvenliği</span>
+</div>
+</div>
+<div class="takvim-item">
+<div class="takvim-num">2</div>
+<div class="takvim-text">
+<h4>Depremden Sonra Hasar Tespiti Nasıl Yapılır?</h4>
+<span class="kw">🔑 deprem hasar tespiti, yapı değerlendirme</span>
+</div>
+</div>
+<div class="takvim-item">
+<div class="takvim-num">3</div>
+<div class="takvim-text">
+<h4>Yarısı Bizden Kredisi ile Güçlendirme: Başvuru Rehberi</h4>
+<span class="kw">🔑 yarısı bizden kredisi, güçlendirme desteği</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Mart 2027 -->
+<div class="takvim-card">
+<div class="takvim-header">
+<div class="ay">🌱 Mart 2027</div>
+<div class="tema">Tema: İlkbahar İnşaat Sezonu Açılışı</div>
+</div>
+<div class="takvim-body">
+<div class="takvim-item">
+<div class="takvim-num">1</div>
+<div class="takvim-text">
+<h4>İlkbaharda Yapı Güçlendirme: En Uygun Mevsim mi?</h4>
+<span class="kw">🔑 yapı güçlendirme ilkbahar, inşaat sezonu</span>
+</div>
+</div>
+<div class="takvim-item">
+<div class="takvim-num">2</div>
+<div class="takvim-text">
+<h4>Epoksi Enjeksiyon ile Çatlak Onarımı: Nasıl Yapılır?</h4>
+<span class="kw">🔑 epoksi enjeksiyon, çatlak onarımı</span>
+</div>
+</div>
+<div class="takvim-item">
+<div class="takvim-num">3</div>
+<div class="takvim-text">
+<h4>İnşaat Ruhsatı Alma Süreci: 2027 Güncel Rehber</h4>
+<span class="kw">🔑 inşaat ruhsatı, yapı izni</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Nisan 2027 -->
+<div class="takvim-card">
+<div class="takvim-header">
+<div class="ay">🌸 Nisan 2027</div>
+<div class="tema">Tema: Yerel SEO &amp; Bölgesel Hizmetler</div>
+</div>
+<div class="takvim-body">
+<div class="takvim-item">
+<div class="takvim-num">1</div>
+<div class="takvim-text">
+<h4>Kars'ta Kentsel Dönüşüm Fırsatları ve Güncel Durum</h4>
+<span class="kw">🔑 Kars kentsel dönüşüm, Kars inşaat</span>
+</div>
+</div>
+<div class="takvim-item">
+<div class="takvim-num">2</div>
+<div class="takvim-text">
+<h4>Doğu Anadolu'da Yapı Güçlendirme: Bölgeye Özel Çözümler</h4>
+<span class="kw">🔑 Doğu Anadolu yapı güçlendirme</span>
+</div>
+</div>
+<div class="takvim-item">
+<div class="takvim-num">3</div>
+<div class="takvim-text">
+<h4>Erzurum, Ağrı, Ardahan: Komşu İllerde Deprem Riski</h4>
+<span class="kw">🔑 Erzurum deprem riski, Ağrı yapı güçlendirme</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- SEO İpuçları -->
+<div class="seo-tips">
+<h2>🎯 SEO Başarı Stratejisi</h2>
+<div class="tips-grid">
+<div class="tip-card">
+<h4>📍 Yerel SEO Fırsatları</h4>
+<p>Kars, Erzurum, Ağrı, Ardahan, Iğdır gibi komşu illeri hedefleyen içerikler oluşturun. "Kars inşaat firması", "Erzurum yapı güçlendirme" gibi yerel anahtar kelimeler düşük rekabetli ve yüksek dönüşümlüdür.</p>
+</div>
+<div class="tip-card">
+<h4>📅 Mevsimsel İçerik</h4>
+<p>Kış aylarında "soğuk havada inşaat", yaz aylarında "yaz dönemi güçlendirme" konularını işleyin. Deprem yıl dönümlerinde (17 Ağustos, 6 Şubat) farkındalık içerikleri yayınlayın.</p>
+</div>
+<div class="tip-card">
+<h4>❓ Soru-Cevap İçerikleri</h4>
+<p>"Bina güçlendirme ne kadar sürer?", "Güçlendirme maliyeti nasıl hesaplanır?" gibi soru formatındaki içerikler Google'ın AI Overviews özelliğinde öne çıkar ve sıfır tıklama aramalarında görünürlük sağlar.</p>
+</div>
+<div class="tip-card">
+<h4>🔗 İç Linkleme Stratejisi</h4>
+<p>Her blog yazısında ilgili hizmet sayfalarına ve diğer blog yazılarına link verin. "Deprem performans analizi" yazısından hizmetler sayfasına, "Kentsel dönüşüm" yazısından iletişim sayfasına yönlendirin.</p>
+</div>
+<div class="tip-card">
+<h4>📊 Schema Markup</h4>
+<p>Her blog yazısına Article schema, hizmet sayfalarına Service schema, iletişim sayfasına LocalBusiness schema ekleyin. Bu yapılandırılmış veriler Google'da zengin sonuçlar (rich snippets) elde etmenizi sağlar.</p>
+</div>
+<div class="tip-card">
+<h4>🏆 E-E-A-T Güçlendirme</h4>
+<p>Yazar profilleri oluşturun, mühendis kadronuzu tanıtın, tamamlanan projeleri fotoğraflarla paylaşın. Google 2026'da uzmanlık ve güvenilirlik sinyallerini daha fazla değerlendiriyor.</p>
+</div>
+</div>
+</div>
+<!-- Rakip Analizi -->
+<div class="section-header">
+<span class="section-tag">Rakip Analizi</span>
+<h2>Rakiplere Karşı <span>Avantajlarınız</span></h2>
+<div class="divider"></div>
+</div>
+<table class="keyword-table">
+<tr><th>Özellik</th><th>Rakip Firmalar</th><th>Gök Yıl İnşaat</th></tr>
+<tr><td>Blog İçeriği</td><td>Bazılarında var</td><td>✅ 9+ makale, düzenli güncelleme</td></tr>
+<tr><td>Yerel SEO (Kars)</td><td>❌ Yok</td><td>✅ Kars odaklı içerikler</td></tr>
+<tr><td>Schema Markup</td><td>Çoğunda yok</td><td>✅ JSON-LD eklendi</td></tr>
+<tr><td>KVK Metni</td><td>Bazılarında var</td><td>✅ Tam metin mevcut</td></tr>
+<tr><td>Sitemap</td><td>Bazılarında var</td><td>✅ Google'a gönderildi</td></tr>
+<tr><td>Sayfa Hızı</td><td>Orta (WordPress)</td><td>✅ Çok hızlı (Saf HTML)</td></tr>
+<tr><td>Mobil Uyum</td><td>Var</td><td>✅ Tam responsive</td></tr>
+<tr><td>Mevsimsel İçerik</td><td>❌ Yok</td><td>✅ Planlı takvim</td></tr>
+</table>
+</div>
+</section>
+<section class="cta-section">
+<div class="container">
+<h2>İçerik Stratejinizi Güçlendirin</h2>
+<p>Düzenli blog içerikleri ile organik trafiğinizi artırın ve müşterilere ulaşın.</p>
+<a class="btn-white" href="iletisim.html">📞 Hemen İletişime Geçin</a>
+</div>
+</section>
+<footer><div class="container">
+<div class="footer-bottom" style="padding:30px 0;">
+<p>© 2026 Gök Yıl İnşaat Müşavirlik Yapı Mühendislik Ltd. Şti.</p>
+<p><a href="kvk.html">KVK</a> | <a href="blog.html">Blog</a> | <a href="iletisim.html">İletişim</a></p>
+</div>
+</div></footer>
+<button class="scroll-top" id="scrollTop" onclick="window.scrollTo({top:0,behavior:'smooth'})">↑</button>
+<script>
+function toggleMenu(){document.getElementById('mobileMenu').classList.toggle('open')}
+window.addEventListener('scroll',()=>{const btn=document.getElementById('scrollTop');if(window.scrollY>400)btn.classList.add('visible');else btn.classList.remove('visible')})
+</script>
+</body>
+</html>

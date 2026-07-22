@@ -37,6 +37,12 @@
     <priority>0.3</priority>
   </url>
   <url>
+    <loc>https://gokyil.com.tr/icerik-takvimi.html</loc>
+    <lastmod>2026-07-22</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
     <loc>https://gokyil.com.tr/blog-deprem-kontrolu.html</loc>
     <lastmod>2026-07-15</lastmod>
     <changefreq>monthly</changefreq>
